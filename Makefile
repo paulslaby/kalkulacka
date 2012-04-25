@@ -1,18 +1,18 @@
 # 
-# Makefile k 2. projektu do predmetu IVS - Stahni a spocti paritu
+# Makefile k 3. projektu do predmetu IVS - Kalkulacka
 # Author:	Pavel Slaby, xslaby00@stud.fit.vutbr.cz
+#		+tym
 # 29.2.2012
 #
 
 BIN=xslaby00
 
 CC=gcc
-CFLAGS=-std=gnu99 -Wall -pedantic -g
+CFLAGS=-std=std99 -Wall -pedantic -g
 SOURCES=test.c matlib.c matlib.h
-#OBJECTS=$(SOURCES:.c=.o)
 CURL_LOCATION=#-I../curl/include/ -L ../curl/lib/.libs/
 
-all:  
+all: 
 
 clean: 
 	rm $(BIN) *.o 
