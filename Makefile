@@ -1,27 +1,31 @@
-# 
-# Makefile k 3. projektu do predmetu IVS - Kalkulacka
-# Author:	Pavel Slaby, xslaby00@stud.fit.vutbr.cz
-#		+tym
-# 29.2.2012
 #
+# Makefile k 3. projektu do predmetu IVS - Kalkulacka
+#
+# Autori: Pavel Slaby, xslaby00@stud.fit.vutbr.cz
+#         Peter Slosar, xslosa00@stud.fit.vutbr.cz
+#         Martin Slezacek, xsleza18@stud.fit.vutbr.cz
+# Datum:  26. 4. 2012
 
-BIN=xslaby00
+.PHONY: doc
 
-CC=gcc
-CFLAGS=-std=std99 -Wall -pedantic -g
-SOURCES=test.c matlib.c matlib.h
-CURL_LOCATION=#-I../curl/include/ -L ../curl/lib/.libs/
+all: kalkulacka
 
-all: 
+kalkulacka:
+	qmake -o ./src/Makefile ./src/kalkulacka.pro
+	make -C src
 
 clean: 
-	rm $(BIN) *.o 
+	rm -f *~
+	rm -rf doc/*
+	rm -f src/*.o
+	rm -f src/ui_*
+	rm -f src/moc_*
+	rm -f src/Makefile
+	rm -f src/kalkulacka
+	rm -f src/*.pro.user
 
-test: matlib.o test.o
-	$(CC) $(CFLAGS) -o $(BIN) test.o matlib.o -lm
+#test: matlib.o test.o
+#	$(CC) $(CFLAGS) -o $(BIN) test.o matlib.o -lm
 
-doc: main.h main.c download.c parity.c 
+doc:
 	doxygen Doxyfile
-	
-$(PART).o: $(PART).c matlib.h
-	$(CC) $(CFLAGS) -c -o $(PART).o $(PART).c
