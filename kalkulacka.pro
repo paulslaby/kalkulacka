@@ -11,8 +11,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    matlib.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    matlib.h
 
 FORMS    += mainwindow.ui
