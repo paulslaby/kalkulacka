@@ -85,19 +85,21 @@ double fact(int n){
 }
 
 // mocnina
-int ivs_pow(int a,int n){
-	if (n < 1){
+double ivs_pow(double a, int n){
+        if (n < 0){
 		return -1;
 	}
-	int sum=1;
+        if (n == 0)
+            return 1;
+        double sum=1;
 	for (int i=1;i<=n; i++){
 		sum*=a;
 	}
 	return sum;
 }
 
-int ivs_exp(int a, int n){
-	return a*ivs_pow(10,n);
+double ivs_exp(double a, int n){
+        return a*ivs_pow(10,n);
 }
 
 

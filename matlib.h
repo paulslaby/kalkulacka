@@ -34,12 +34,9 @@ double div_id(int a, double b);
 double fact(int n);
 
 //mocnina
-int ivs_pow(int a,int n);
+double ivs_pow(double a, int n);
 
 //mocnina
-int ivs_pow(int a,int n);
-
-//mocnina
-int ivs_exp(int a, int n);
+double ivs_exp(double a, int n);
 
 #endif /* matlib.h  */

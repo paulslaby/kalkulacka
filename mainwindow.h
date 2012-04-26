@@ -27,8 +27,12 @@ private:
     double result;
     bool checkInteger(double number);
     bool operatorFlag;
+    int currentOperator;
+    enum {PLUS, MINUS, MUL, DIV, POW, EXP};
     void markError();
+    void computeResult();
     void displayResult();
+
 
 private slots:
     void on_actionQuit_triggered();
