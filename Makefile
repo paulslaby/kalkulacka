@@ -11,7 +11,6 @@
 all: kalkulacka
 
 kalkulacka:
-	qmake -project -o ./src/kalkulacka.pro
 	qmake -o ./src/Makefile ./src/kalkulacka.pro
 	make -C src
 
@@ -22,6 +21,8 @@ clean:
 	rm -f src/ui_*
 	rm -f src/moc_*
 	rm -f src/Makefile
+	rm -f src/kalkulacka
+	rm -f src/*.pro.user
 
 #test: matlib.o test.o
 #	$(CC) $(CFLAGS) -o $(BIN) test.o matlib.o -lm
