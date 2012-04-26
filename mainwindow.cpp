@@ -1,3 +1,12 @@
+/**
+ * @file mainwindow.cpp
+ * @author Peter Šlosár <xslosa00@stud.fit.vutbr.cz>
+ * @author Pavel Slabý <xslaby00@stud.fit.vutbr.cz>
+ * @author Martin Slezáček <xsleza18@stud.fit.vutbr.cz>
+ *
+ * 3. projekt do predmetu IVS - kalkulačka. Obsah hlavného okna.
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "matlib.h"
