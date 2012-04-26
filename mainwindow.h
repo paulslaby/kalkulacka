@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
+#include <QString>
+#include <math.h>
 
 namespace Ui {
     class MainWindow;
@@ -17,6 +20,23 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    void initCalc();
+    bool pointFlag;
+    double operand1;
+    double operand2;
+    double result;
+    bool checkInteger(double number);
+    bool operatorFlag;
+
+private slots:
+    void on_actionQuit_triggered();
+    void on_actionHelp_triggered();
+    void numberClicked();
+    void pointClicked();
+    void operatorClicked();
+    void unaryOperatorClicked();
+    void equalsClicked();
+    void clearClicked();
 };
 
 #endif // MAINWINDOW_H
