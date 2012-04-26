@@ -69,6 +69,7 @@ void MainWindow::initCalc()
     this->result = 0;
     this->pointFlag = false;
     ui->label->clear();
+    ui->labelExp->hide();
     this->operatorFlag = false;
 }
 
@@ -93,6 +94,7 @@ void MainWindow::numberClicked()
     {
         ui->lineEdit->clear();
         this->operatorFlag = false;
+        this->pointFlag = false;
     }
 
     if (ui->lineEdit->text() == "0")
@@ -125,14 +127,26 @@ void MainWindow::clearClicked()
 
 void MainWindow::operatorClicked()
 {
+    this->operatorFlag = true;
+
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
 
-    ui->label->setText(clickedButton->text());
-    this->operatorFlag = true;
+    if (clickedButton->text() == "EXP")
+    {
+        ui->label->clear();
+        ui->labelExp->show();
+    }
+    else
+    {
+        ui->labelExp->hide();
+        ui->label->setText(clickedButton->text());
+    }
 }
 
 void MainWindow::unaryOperatorClicked()
 {
+    this->operatorFlag = true;
+
     QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
 
     this->operand1 = ui->lineEdit->text().toDouble();
@@ -141,18 +155,30 @@ void MainWindow::unaryOperatorClicked()
     {
         if (checkInteger(this->operand1))
         {
-
+            this->result = fact(this->operand1);
+            displayResult();
         }
         else
         {
-            ui->label->setText("E");
+            markError();
         }
     }
 }
 
 void MainWindow::equalsClicked()
 {
-    QPushButton *clickedButton = qobject_cast<QPushButton *>(sender());
+    this->operatorFlag = true;
+    displayResult();
+}
 
-    qDebug() << clickedButton->text();
+void MainWindow::markError()
+{
+    ui->labelExp->hide();
+    ui->label->setText("E");
+}
+
+void MainWindow::displayResult()
+{
+    QString output = QString::number(this->result, 'g', 10);
+    ui->lineEdit->setText(output);
 }

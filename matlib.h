@@ -1,5 +1,5 @@
-#ifndef	_MATH_H
-#define	_MATH_H	1
+#ifndef	_MATLIB_H
+#define	_MATLIB_H
 
 
 
@@ -31,7 +31,7 @@ double div_di(double a, int b);
 double div_id(int a, double b);
 
 //faktorial
-int fact(int n);
+double fact(int n);
 
 //mocnina
 int ivs_pow(int a,int n);
@@ -42,4 +42,4 @@ int ivs_pow(int a,int n);
 //mocnina
 int ivs_exp(int a, int n);
 
-#endif /* math.h  */
+#endif /* matlib.h  */

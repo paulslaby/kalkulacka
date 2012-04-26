@@ -73,11 +73,11 @@ double div_id(int a, double b){
 }
 
 // faktorial
-int fact(int n){
+double fact(int n){
 	if (n < 0){
 		return -1;
 	}
-	int sum=1;
+        double sum=1;
 	for (int i = 2; i<=n; i++){
 		sum *= i;
 	}

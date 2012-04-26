@@ -27,6 +27,8 @@ private:
     double result;
     bool checkInteger(double number);
     bool operatorFlag;
+    void markError();
+    void displayResult();
 
 private slots:
     void on_actionQuit_triggered();
